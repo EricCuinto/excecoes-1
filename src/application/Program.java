@@ -7,6 +7,19 @@ public class Program {
 
 	public static void main(String[] args) {
 
+		method1();
+		System.out.println("Fim do Programa");
+
+	}
+
+	public static void method1() {
+		System.out.println("MÉTODO 1 INÍCIO");
+		method2();
+		System.out.println("MÉTODO 1 FIM");
+	}
+
+	public static void method2() {
+		System.out.println("MÉTODO 2 INÍCIO");
 		Scanner sc = new Scanner(System.in);
 
 		try {
@@ -15,12 +28,13 @@ public class Program {
 			System.out.println(vect[position]);
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Posição inválida !");
-		}
-		catch (InputMismatchException e) {
+			e.printStackTrace();
+			sc.next();
+		} catch (InputMismatchException e) {
 			System.out.println("Valor inválido");
 		}
-		System.out.println("Fim do Programa");
 		sc.close();
+		System.out.println("MÉTODO 2 FIM");
 	}
 
 }
